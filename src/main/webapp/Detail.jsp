@@ -93,7 +93,7 @@
             </div>
         </div>
         <div class = "product-content">
-            <h2>Laptop Asus ZenBook Flip OLED UP3404VA KN038W</h2>
+            <h2>${detail.title}</h2>
             <div class = "product-detail">
                 <table>
                     <h1>Thông tin cơ bản</h1>

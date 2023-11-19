@@ -123,13 +123,15 @@ public class DAO {
     }
     public static void main(String[] args){
         DAO dao = new DAO();
-        String brandID = "1"; // Thay "1" bằng ID thực tế bạn muốn kiểm tra
-        List<Product> list = dao.getProductByBrand(brandID);
-        for (Product o : list){
-            System.out.println(o);
+        String productID = "5"; // Thay đổi giá trị này tùy theo ID sản phẩm bạn muốn kiểm tra
+        Product product = dao.getProductByID(productID);
+        if (product != null) {
+            System.out.println(product);
+        } else {
+            System.out.println("Không tìm thấy sản phẩm với ID: " + productID);
         }
-//        List<Brand> lists = dao.getAllBrand();
-//        for (Brand o : lists){
+//        List<Product> lists = dao.getAllProduct();
+//        for (Product o : lists){
 //            System.out.println(o);
 //        }
     }

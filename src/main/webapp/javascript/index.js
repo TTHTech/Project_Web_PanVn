@@ -82,3 +82,4 @@ leftbtntwo.addEventListener("click", function(){
 document.getElementById('redirectDiv').addEventListener('click', function() {
     window.location.href = 'Detail.jsp';
 });
+

@@ -41,11 +41,12 @@ public class BrandControl extends HttpServlet {
         String braID = request.getParameter("bid");
         DAO dao = new DAO();
         List<Product> list = dao.getProductByBrand(braID);
-        List<Product> lastfive = dao.getfiveLast();
         List<Brand> listB =  dao.getAllBrand();
+        List<Product> lastfive = dao.getfiveLast();
         request.setAttribute("listP", list);
-        request.setAttribute("five", lastfive);
         request.setAttribute("listB", listB);
+        request.setAttribute("five", lastfive);
+
 
         request.getRequestDispatcher("Home.jsp").forward(request, response);
     }
