@@ -424,5 +424,19 @@ nav ul li:nth-child(9) button:hover{
     background-color: rgba(249, 126, 14, 0.6);
 }
 
+/*=================================line==============================*/
+.vertical-line {
+    position: relative;
+    width: 2px; /* Độ rộng của đường thẳng */
+    height: 600px; /* Chiều cao của đường thẳng */
+}
 
-
+.vertical-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 550px; /* Độ dịch chuyển đường thẳng từ trái sang phải */
+    transform: translateX(-50%);
+    border-left: 5px solid #000; /* Màu và độ rộng của đường thẳng */
+    height: 100%;
+}
