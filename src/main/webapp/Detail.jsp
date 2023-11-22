@@ -14,8 +14,37 @@
     <title>Product Card/Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/SanPham.css">
-    <link rel="stylesheet" href="css/home.css">
+<%--    <link rel="stylesheet" href="css/home.css">--%>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <style>
+        /*.product-detail td {*/
+        /*    padding-right: 10px; !* Để tạo khoảng cách giữa các cột *!*/
+        /*}*/
+
+        /*.product-detail td.label {*/
+        /*    font-weight: bold;*/
+        /*}*/
+        /*.container {*/
+        /*    display: flex;*/
+        /*    align-items: center;*/
+        /*}*/
+
+        .breadcrumb-item {
+            list-style: none;
+        }
+
+        .breadcrumb-item a {
+            text-decoration: none;
+            color: #000; /* Màu chữ mặc định */
+            display: flex;
+            align-items: center;
+            font-size: 1em; /* Font size gấp đôi */
+        }
+
+        .breadcrumb-item a:hover {
+            color: #007bff; /* Màu chữ khi di chuột qua */
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -23,37 +52,40 @@
 </header>
 <jsp:include page="Header.jsp"></jsp:include>
 <!-- =============================Header============================================ -->
+<div class="container">
+    <li class="breadcrumb-item"><a href="home">Trang Chủ >   <p> ${detail.title} </P> </a> </li>
+</div>
 <div class = "card-wrapper" style="background-color: white">
     <div class="vertical-line"></div>
     <div class = "card" style="background-color: white; margin-top: 40px">
         <div class = "product-imgs">
             <div class = "img-display">
                 <div class = "img-showcase">
-                    <img src = "image/laptop81.jpg" alt = "Laptop">
-                    <img src = "image/laptop82.jpg" alt = "Laptop">
-                    <img src = "images/laptop83.jpg" alt = "Laptop">
-                    <img src = "image/laptop84.jpg" alt = "Laptop">
+                    <img src = "${detail.url1}" alt = "Laptop">
+                    <img src = "${detail.url2}" alt = "Laptop">
+                    <img src = "${detail.url3}" alt = "Laptop">
+                    <img src = "${detail.url4}" alt = "Laptop">
                 </div>
             </div>
             <div class = "img-select">
                 <div class = "img-item">
                     <a href = "#" data-id = "1">
-                        <img src = "image/laptop81.jpg" alt = "Laptop">
+                        <img src = "${detail.url1}" alt = "Laptop">
                     </a>
                 </div>
                 <div class = "img-item">
                     <a href = "#" data-id = "2">
-                        <img src = "image/laptop82.jpg" alt = "Laptop">
+                        <img src = "${detail.url2}" alt = "Laptop">
                     </a>
                 </div>
                 <div class = "img-item">
                     <a href = "#" data-id = "3">
-                        <img src = "image/laptop83.jpg" alt = "Laptop">
+                        <img src = "${detail.url3}" alt = "Laptop">
                     </a>
                 </div>
                 <div class = "img-item">
                     <a href = "#" data-id = "4">
-                        <img src = "image/laptop84.jpg" alt = "Laptop">
+                        <img src = "${detail.url4}" alt = "Laptop">
                     </a>
                 </div>
             </div>
@@ -63,33 +95,32 @@
             <div class = "product-detail">
                 <table>
                     <h1>Thông tin cơ bản</h1>
-                    <tr>Nổi tiếng với sự đẳng cấp, sang trọng mà mình mang lại, Asus ZenBook OLED UP3404VA KN038W vẫn sở hữu thiết kế mỏng nhẹ, cứng cáp thường thấy. </tr>
-                    <tr>Tuy là một chiếc laptop ultrabook với card đồ họa Intel Iris Xe Graphics (dòng card onboard mạnh mẽ nhất hiện nay của nhà Intel) cùng CPU Intel Core i5-1340P, laptop Asus ZenBook Flip OLED UP3404VA KN038W sở hữu một hiệu năng vô cùng ấn tượng mà ít dòng ultrabook nào trong tầm giá có được.</tr>
+                    <tr>${detail.description}</tr>
                     <h1>Thông số kỹ thuật</h1>
                     <tr>
-                        <td>CPU</td>
+                        <td class="label">CPU</td>
                         <td>:          |</td>
-                        <td>Điền vào CPU</td>
+                        <td>${detail.processor}</td>
                     </tr>
                     <tr>
-                        <td>RAM</td>
+                        <td class="label">RAM</td>
                         <td>:          |</td>
-                        <td> điền vào RAM</td>
+                        <td>${detail.ram}</td>
                     </tr>
                     <tr>
-                        <td>Ổ cứng</td>
+                        <td class="label">Ổ cứng</td>
                         <td>:          |</td>
-                        <td>Điền cào dung lượng ổ cứng</td>
+                        <td>${detail.storage}</td>
                     </tr>
                     <tr>
-                        <td>Card đồ họa</td>
+                        <td class="label">Card đồ họa</td>
                         <td>:          |</td>
-                        <td>Điền vào thông tin card đồ họa</td>
+                        <td>${detail.graphicsCard}</td>
                     </tr>
                     <tr>
-                        <td>Màng hình</td>
+                        <td class="label">Màng hình</td>
                         <td>:          |</td>
-                        <td>Điền vào thông tin màng hình</td>
+                        <td>${detail.prdescription}</td>
                     </tr>
                 </table>
             </div>
@@ -111,6 +142,6 @@
 </div>
 <!-- =============================footer============================================ -->
 <jsp:include page="Footer.jsp"></jsp:include>
-<script src="SanPham.js"></script>
+<script src="javascript/SanPham.js"></script>
 </body>
 </html>

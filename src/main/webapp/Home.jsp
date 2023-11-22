@@ -82,12 +82,12 @@
                     <div class="slider-product-one-content-items" >
                         <c:forEach items="${five}" var="o" >
                             <div class="slider-product-one-content-item" onclick="location.href='detail?pid=${o.productID}';" style="cursor: pointer;">
-                                <img src="image/product4.jpg" alt="">
+                                <img src="${o.url1}" alt="">
                                 <ul class="slider-product-one-content-item-text">
                                     <li><img src="image/icon1.png" alt=""><p>Sale giá sốc</p></li>
                                     <li><a href="#" title="View Product"></a>${o.title}</li>
-                                    <li><a href="">${o.price}<sup>đ</sup></a><span>${o.price}</span></li>
-                                    <li>${o.price} <sup>đ</sup></li>
+                                    <li><a href="">${o.price}<sup>$</sup></a><span>${o.price}</span></li>
+                                    <li>${o.price} <sup>$</sup></li>
                                     <li>
                                         <i class="ti-github"></i>
                                         <i class="ti-github"></i>
@@ -120,12 +120,12 @@
             <div class="product-gallery-one-content-product">
                 <c:forEach items="${listP}" var="o">
                     <div class="product-gallery-one-content-product-item" onclick="location.href='detail?pid=${o.productID}';" style="cursor: pointer;">
-                        <img src="image/product4.jpg" alt="">
+                        <img src="${o.url1}" alt="">
                         <ul class="product-gallery-one-content-product-item-text">
                             <li><img src="image/icon1.png" alt=""><p>Sale giá sốc</p></li>
                             <li><a href="#" title="View Product"></a>${o.title}</li>
-                            <li><a href="">${o.price}<sup>đ</sup></a><span>${o.price}</span></li>
-                            <li>${o.price} <sup>đ</sup></li>
+                            <li><a href="">${o.price}<sup>$</sup></a><span>${o.price}</span></li>
+                            <li>${o.price} <sup>$</sup></li>
                             <li>
                                 <i class="ti-github"></i>
                                 <i class="ti-github"></i>

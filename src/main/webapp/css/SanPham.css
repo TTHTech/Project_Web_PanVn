@@ -440,3 +440,37 @@ nav ul li:nth-child(9) button:hover{
     border-left: 5px solid #000; /* Màu và độ rộng của đường thẳng */
     height: 100%;
 }
+.product-detail td {
+     padding-right: 10px; /* Để tạo khoảng cách giữa các cột */
+}
+
+.product-detail td.label {
+    font-weight: bold;
+}
+.product-detail td {
+    padding-right: 10px; /* Để tạo khoảng cách giữa các cột */
+}
+
+.product-detail td.label {
+    font-weight: bold;
+}
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item {
+    list-style: none;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #000; /* Màu chữ mặc định */
+    display: flex;
+    align-items: center;
+    font-size: 1em; /* Font size gấp đôi */
+}
+
+.breadcrumb-item a:hover {
+    color: #007bff; /* Màu chữ khi di chuột qua */
+}

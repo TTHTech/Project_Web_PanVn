@@ -8,13 +8,23 @@ public class Product {
     private int brandID;
     private String color;
     private int productDetailID;
+    private String url1;
+    private String url2;
+    private String url3;
+    private String url4;
+    private String processor;
+    private String ram;
+    private String storage;
+    private String graphicsCard;
+    private String operatingSystem;
+    private String prdescription;
 
     // Constructor mặc định
     public Product() {
     }
 
     // Constructor với tất cả các thuộc tính
-    public Product(int productID, String title, double price, String description, int brandID, String color, int productDetailID) {
+    public Product(int productID, String title, double price, String description, int brandID, String color, int productDetailID, String URL1,String URL2, String URL3, String URL4, String Processor, String Ram, String Storage, String GraphicsCard, String OperatingSystem, String Description) {
         this.productID = productID;
         this.title = title;
         this.price = price;
@@ -22,6 +32,16 @@ public class Product {
         this.brandID = brandID;
         this.color = color;
         this.productDetailID = productDetailID;
+        this.url1 = URL1;
+        this.url2 = URL2;
+        this.url3 = URL3;
+        this.url4 = URL4;
+        this.processor = Processor;
+        this.ram = Ram;
+        this.storage = Storage;
+        this.graphicsCard = GraphicsCard;
+        this.operatingSystem = OperatingSystem;
+        this.prdescription = Description;
     }
 
     // Getter và Setter cho productID
@@ -86,6 +106,26 @@ public class Product {
     public void setProductDetailID(int productDetailID) {
         this.productDetailID = productDetailID;
     }
+    public String getUrl1(){return url1; }
+    public void setUrl1(String URL1){this.url1 = URL1; }
+    public String getUrl2(){return url2; }
+    public void setUrl2(String URL2){this.url2 = URL2; }
+    public String getUrl3(){return url3; }
+    public void setUrl3(String URL3){this.url3 = URL3; }
+    public String getUrl4(){return url4; }
+    public void setUrl4(String URL4){this.url4 = URL4; }
+    public String getProcessor(){return processor; }
+    public void setProcessor(String Processor){this.processor = Processor; }
+    public String getRam(){return ram; }
+    public void setRam(String Ram){this.ram = Ram; }
+    public String getStorage(){return storage; }
+    public void setStorage(String Storage){this.storage = Storage; }
+    public String getGraphicsCard(){return graphicsCard; }
+    public void setGraphicsCard(String GraphicsCard){this.graphicsCard = GraphicsCard; }
+    public String getOperatingSystem(){return operatingSystem; }
+    public void setOperatingSystem(String OperatingSystem){this.operatingSystem = OperatingSystem; }
+    public String getPrdescription(){return prdescription; }
+    public void setPrdescription(String Prdescription){this.prdescription = Prdescription; }
 
     @Override
     public String toString() {
@@ -97,6 +137,16 @@ public class Product {
                 ", brandID=" + brandID +
                 ", color='" + color + '\'' +
                 ", productDetailID=" + productDetailID +
+                ", url1='" + url1 + '\'' +
+                ", url2='" + url2 + '\'' +
+                ", url3='" + url3 + '\'' +
+                ", url4='" + url4 + '\'' +
+                ", processor='" + processor + '\'' +
+                ", ram='" + ram + '\'' +
+                ", storage='" + storage + '\'' +
+                ", graphicsCard='" + graphicsCard + '\'' +
+                ", operatingSystem='" + operatingSystem + '\'' +
+                ", prdescription='" + prdescription + '\'' +
                 '}';
     }
 }
