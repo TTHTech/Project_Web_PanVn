@@ -16,7 +16,7 @@
                         <div class="menu-bar-content">
                             <ul>
                                 <c:forEach var="o" items="${listB}">
-                                    <li><a href="Brand?bid=${o.brandID}"><i class="ti-github"></i>${o.brandName}<i class="ti-angle-double-right"></i></a></li>
+                                    <li><a href="brand?brandID=${o.brandID}"><i class="ti-github"></i>${o.brandName}<i class="ti-angle-double-right"></i></a></li>
                                 </c:forEach>
                             </ul>
                         </div>
@@ -83,19 +83,22 @@
                         <c:forEach items="${five}" var="o" >
                             <div class="slider-product-one-content-item" onclick="location.href='detail?pid=${o.productID}';" style="cursor: pointer;">
                                 <img src="image/product4.jpg" alt="">
-                                <ul class="slider-product-one-content-item-text">
-                                    <li><img src="image/icon1.png" alt=""><p>Sale giá sốc</p></li>
-                                    <li><a href="#" title="View Product"></a>${o.title}</li>
-                                    <li><a href="">${o.price}<sup>đ</sup></a><span>${o.price}</span></li>
-                                    <li>${o.price} <sup>đ</sup></li>
-                                    <li>
-                                        <i class="ti-github"></i>
-                                        <i class="ti-github"></i>
-                                        <i class="ti-github"></i>
-                                        <i class="ti-github"></i>
-                                        <i class="ti-github"></i>
-                                    </li>
-                                </ul>
+                                <div class="slider-product-one-content-item-text">
+                                    <ul>
+                                        <li><img src="image/icon1.png" alt=""><p>Sale giá sốc</p></li>
+                                        <li><a href="#" title="View Product"></a>${o.title}</li>
+                                        <li><a href="">${o.price}<sup>đ</sup></a><span>${o.price}</span></li>
+                                        <li>${o.price} <sup>đ</sup></li>
+                                        <li>
+                                            <i class="ti-github"></i>
+                                            <i class="ti-github"></i>
+                                            <i class="ti-github"></i>
+                                            <i class="ti-github"></i>
+                                            <i class="ti-github"></i>
+                                        </li>
+                                    </ul>
+
+                                </div>
                             </div>
                         </c:forEach>
                     </div>
@@ -121,19 +124,22 @@
                 <c:forEach items="${listP}" var="o">
                     <div class="product-gallery-one-content-product-item" onclick="location.href='detail?pid=${o.productID}';" style="cursor: pointer;">
                         <img src="image/product4.jpg" alt="">
-                        <ul class="product-gallery-one-content-product-item-text">
-                            <li><img src="image/icon1.png" alt=""><p>Sale giá sốc</p></li>
-                            <li><a href="#" title="View Product"></a>${o.title}</li>
-                            <li><a href="">${o.price}<sup>đ</sup></a><span>${o.price}</span></li>
-                            <li>${o.price} <sup>đ</sup></li>
-                            <li>
-                                <i class="ti-github"></i>
-                                <i class="ti-github"></i>
-                                <i class="ti-github"></i>
-                                <i class="ti-github"></i>
-                                <i class="ti-github"></i>
-                            </li>
-                        </ul>
+                        <div class="product-gallery-one-content-product-item-text">
+                            <ul>
+                                <li><img src="image/icon1.png" alt=""><p>Sale giá sốc</p></li>
+                                <li><a href="#" title="View Product"></a>${o.title}</li>
+                                <li><a href="">${o.price}<sup>đ</sup></a><span>${o.price}</span></li>
+                                <li>${o.price} <sup>đ</sup></li>
+                                <li>
+                                    <i class="ti-github"></i>
+                                    <i class="ti-github"></i>
+                                    <i class="ti-github"></i>
+                                    <i class="ti-github"></i>
+                                    <i class="ti-github"></i>
+                                </li>
+                            </ul>
+
+                        </div>
                     </div>
                 </c:forEach>
             </div>

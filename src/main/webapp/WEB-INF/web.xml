@@ -18,7 +18,7 @@
 <!--    <session-config>-->
 <!--        <tracking-mode>COOKIE</tracking-mode>-->
 <!--    </session-config>-->
-<!--    <welcome-file-list>-->
-<!--        <welcome-file>Home.jsp</welcome-file>-->
-<!--    </welcome-file-list>-->
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
 </web-app>

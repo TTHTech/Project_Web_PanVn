@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author trinh
  */
-@WebServlet(name = "CategoryControl", urlPatterns = {"/brand"})
+@WebServlet(name = "BrandControl", urlPatterns = {"/brand"})
 public class BrandControl extends HttpServlet {
 
     /**
@@ -38,7 +38,7 @@ public class BrandControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String braID = request.getParameter("bid");
+        String braID = request.getParameter("brandID");
         DAO dao = new DAO();
         List<Product> list = dao.getProductByBrand(braID);
         List<Brand> listB =  dao.getAllBrand();
@@ -48,7 +48,7 @@ public class BrandControl extends HttpServlet {
         request.setAttribute("five", lastfive);
 
 
-        request.getRequestDispatcher("Home.jsp").forward(request, response);
+        request.getRequestDispatcher("Brand.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
