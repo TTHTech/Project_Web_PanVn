@@ -8,8 +8,8 @@ package control;
 import dao.DAO;
 import entity.Brand;
 import entity.Product;
+
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
