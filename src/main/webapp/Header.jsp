@@ -29,7 +29,7 @@
 <nav>
   <div class="container">
     <ul>
-      <li><a href=""><img style = "width: 150px;" src="image/logoPan6.png" alt=""></a></li>
+      <li><a href="home"><img style = "width: 150px;" src="image/logoPan6.png" alt=""></a></li>
       <li id = "adress-form"><a href="#">TP.Hồ Chí Minh<i class="fas fa-sort-down"></i></a></li>
       <li><input type="text" placeholder="Bạn tìm gì..."><i class="fas fa-search"></i></li>
       <li><a href=""><button><i class = "fas fa-shopping-cart"> </i>Giỏ hàng</button></a></li>
