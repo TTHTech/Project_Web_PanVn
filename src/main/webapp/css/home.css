@@ -47,9 +47,10 @@ nav ul{
     align-items: center;
 }
 
-nav ul li, a{
+.nav > ul li, a{
     color: var(--color-white);
     font-size: 12px;
+    text-decoration: none;
 }
 nav ul li:nth-child(2) a{
     color: var(--color-yellow);
@@ -402,9 +403,9 @@ nav ul li:nth-child(9) button:hover{
 .submenu ul li:hover a{
     color: #F97E0E;
 }
-.submenu ul li:hover{
-    background-color: none;
-}
+/*.submenu ul li:hover{*/
+/*    background-color: ;*/
+/*}*/
 /* ---------------------------------------------------------------------------------- */
 /* --------section---- */
 .slider-content-left{
@@ -805,7 +806,7 @@ nav ul li:nth-child(9) button:hover{
 .product-gallery-one-content-title ul li a{
     color: #333;
     font-size: 12px;
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
 }
 .product-gallery-one-content-title ul {
     display: flex;
@@ -858,7 +859,7 @@ nav ul li:nth-child(9) button:hover{
 }
 .product-gallery-two-content-left-top h2{
     margin-left: 50px;
-    font: bold;
+    font: bold italic 32px "SF Pro Display", 'Arial', sans-serif;
     color: #FFEE12;
     font-family: "SF Pro Display", 'Arial', sans-serif;
     font-style: italic;

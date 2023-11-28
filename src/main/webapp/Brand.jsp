@@ -25,7 +25,7 @@
             <div class="product-gallery-one-content-product">
                 <c:forEach items="${listP}" var="o">
                     <div class="product-gallery-one-content-product-item" onclick="location.href='detail?pid=${o.productID}';" style="cursor: pointer;">
-                        <img src="image/product4.jpg" alt="${o.title}">
+                        <img src="${o.url1}" alt="${o.title}">
                         <div class="product-gallery-one-content-product-item-text">
                             <ul>
                                 <li><img src="assets/image/icon1.png" alt=""><p>Sale giá sốc</p></li>

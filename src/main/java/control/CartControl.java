@@ -5,6 +5,7 @@
  */
 package control;
 
+
 import entity.Brand;
 import entity.Product;
 import  dao.productDAO;
@@ -21,8 +22,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author trinh
  */
-@WebServlet(name = "DetailControl", urlPatterns = {"/detail"})
-public class DetailControl extends HttpServlet {
+@WebServlet(name = "CartControl", urlPatterns = {"/cart"})
+public class CartControl extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,11 +37,18 @@ public class DetailControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String id = request.getParameter("pid");
-        productDAO dao = new productDAO();
-        Product p = dao.getProductByID(id);
-        request.setAttribute("detail", p);
-        request.getRequestDispatcher("Detail.jsp").forward(request, response);
+        //b1: get data from dao
+       productDAO dao = new productDAO();
+       brandDAO data = new brandDAO();
+        List<Product> list = dao.getAllProduct();
+        List<Product> lastfive = dao.getfiveLast();
+        List<Brand> listB =  data.getAllBrand();
+        request.setAttribute("listP", list);
+        request.setAttribute("five", lastfive);
+        request.setAttribute("listB", listB);
+        request.getRequestDispatcher("Cart.jsp").forward(request, response);
+        //404 -> url
+        //500 -> jsp properties
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

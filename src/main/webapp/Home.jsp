@@ -82,7 +82,7 @@
                     <div class="slider-product-one-content-items" >
                         <c:forEach items="${five}" var="o" >
                             <div class="slider-product-one-content-item" onclick="location.href='detail?pid=${o.productID}';" style="cursor: pointer;">
-                                <img src="image/product4.jpg" alt="">
+                                <img src="${o.url1}" alt="">
                                 <div class="slider-product-one-content-item-text">
                                     <ul>
                                         <li><img src="image/icon1.png" alt=""><p>Sale giá sốc</p></li>
@@ -123,7 +123,7 @@
             <div class="product-gallery-one-content-product">
                 <c:forEach items="${listP}" var="o">
                     <div class="product-gallery-one-content-product-item" onclick="location.href='detail?pid=${o.productID}';" style="cursor: pointer;">
-                        <img src="image/product4.jpg" alt="">
+                        <img src="${o.url1}" alt="">
                         <div class="product-gallery-one-content-product-item-text">
                             <ul>
                                 <li><img src="image/icon1.png" alt=""><p>Sale giá sốc</p></li>

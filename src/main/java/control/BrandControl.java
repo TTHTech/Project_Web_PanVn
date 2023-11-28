@@ -5,18 +5,17 @@
  */
 package control;
 
-import dao.DAO;
 import entity.Brand;
 import entity.Product;
+import  dao.productDAO;
+import dao.brandDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 /**
  *
  * @author trinh
@@ -39,9 +38,10 @@ public class BrandControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String braID = request.getParameter("brandID");
-        DAO dao = new DAO();
+        productDAO dao = new productDAO();
+        brandDAO data = new brandDAO();
         List<Product> list = dao.getProductByBrand(braID);
-        List<Brand> listB =  dao.getAllBrand();
+        List<Brand> listB =  data.getAllBrand();
         List<Product> lastfive = dao.getfiveLast();
         request.setAttribute("listP", list);
         request.setAttribute("listB", listB);

@@ -5,10 +5,11 @@
  */
 package control;
 
-import dao.DAO;
+
 import entity.Brand;
 import entity.Product;
-
+import  dao.productDAO;
+import dao.brandDAO;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -37,10 +38,11 @@ public class HomeControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         //b1: get data from dao
-        DAO dao = new DAO();
+        productDAO dao = new productDAO();
+        brandDAO data = new brandDAO();
         List<Product> list = dao.getAllProduct();
         List<Product> lastfive = dao.getfiveLast();
-        List<Brand> listB =  dao.getAllBrand();
+        List<Brand> listB =  data.getAllBrand();
         request.setAttribute("listP", list);
         request.setAttribute("five", lastfive);
         request.setAttribute("listB", listB);
