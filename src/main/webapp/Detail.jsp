@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,36 +15,32 @@
     <title>Product Card/Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/SanPham.css">
-<%--    <link rel="stylesheet" href="css/home.css">--%>
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <style>
-        /*.product-detail td {*/
-        /*    padding-right: 10px; !* Để tạo khoảng cách giữa các cột *!*/
-        /*}*/
-
-        /*.product-detail td.label {*/
-        /*    font-weight: bold;*/
-        /*}*/
-        /*.container {*/
-        /*    display: flex;*/
-        /*    align-items: center;*/
-        /*}*/
-
+        .containerr {
+            display: flex;
+            /*align-items: center;*/
+        }
+        .containerr > * {
+            margin-left: 40px;
+        }
         .breadcrumb-item {
             list-style: none;
+            display: flex;
+            align-items: center;
         }
 
         .breadcrumb-item a {
             text-decoration: none;
             color: #000; /* Màu chữ mặc định */
-            display: flex;
-            align-items: center;
             font-size: 1em; /* Font size gấp đôi */
         }
 
         .breadcrumb-item a:hover {
             color: #007bff; /* Màu chữ khi di chuột qua */
         }
+
     </style>
 </head>
 <body>
@@ -52,8 +49,12 @@
 </header>
 <jsp:include page="Header.jsp"></jsp:include>
 <!-- =============================Header============================================ -->
-<div class="container">
-    <li class="breadcrumb-item"><a href="home">Trang Chủ >   <p> ${detail.title} </P> </a> </li>
+<div class="containerr">
+    <li class="breadcrumb-item">
+        <a href="home">Trang Chủ |></a>
+        <a href="brand?brandID=${detail.brandID}"> Brand |></a>
+        <p> ${detail.title} </P>
+    </li>
 </div>
 <div class = "card-wrapper" style="background-color: white">
     <div class="vertical-line"></div>
@@ -129,13 +130,13 @@
                 <p class = "new-price">Giá mới: <span>5.999.999</span></p>
             </div>
             <div class = "purchase-info">
-                <input type = "number" min = "0" value = "1">
-                <a href="GioHang?productCode=sanpham8">
-                    <button type = "button" class = "btn">
-                        Thêm vào giỏ hàng <i class = "fas fa-shopping-cart"></i>
-                    </button>
-                </a>
-                <button type = "button" class = "btn">Mua ngay</button>
+                <form action="cart" method="post">
+                    <input type="hidden" name="productID" value="${detail.productID}">
+                    <input type="number" name="quantity" min="1" value="1">
+                    <input type="submit" value="Add to cart">
+                </form>
+
+            <%--                <button type = "button"  class = "btn">Mua ngay</button>--%>
             </div>
         </div>
     </div>

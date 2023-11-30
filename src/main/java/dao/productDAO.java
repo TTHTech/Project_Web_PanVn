@@ -239,4 +239,31 @@ public class productDAO {
         }
         return null;
     }
+    public void insertGallery(String url1, String url2, String url3, String url4){
+        String queryGallery = "INSERT INTO Gallery (imageURL1, imageURL2, imageURL3, imageURL4) VALUES (N'"+url1+"',N'"+url2+"',N'"+url3+"',N'"+url4+"')";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(queryGallery);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+    public void insertProductDetail(String processor, String ram, String storage, String graphicsCard, String operatingSystem, String prdescription, Double discount){
+        String queryProductDetail = "INSERT INTO ProductDetail (processor, ram, storage, graphicsCard, operatingSystem, description, discount) VALUES(N'"+processor+"', N'"+ram+"', N'"+storage+"', N'"+graphicsCard+"', N'"+operatingSystem+"', N'"+prdescription+"','"+discount+"')";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(queryProductDetail);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+    public void insertProduct(String title, Double price, String description, Double brandID, String color, String productDetailID){
+        String queryProduct = "INSERT INTO Product (title, price, description, brandID, color, productDetailID) VALUES(N'"+title+"','"+price+"',N'"+description+"','"+brandID+"',N'"+color+"','"+productDetailID+"')";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(queryProduct);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
 }

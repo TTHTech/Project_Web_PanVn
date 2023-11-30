@@ -17,18 +17,31 @@ public class User {
 
     private Date updatedAt;
 
+    private String userName;
+
+    private  String accountemail;
+
+    private  String password;
+
+    private  int role;
+
     // Constructors
     public User() {
     }
 
-    public User(String fullName, String email, String phone, String address) {
+    public User(int userID, String fullName, String email, String phone, String address, Date createdAt, Date updatedAt, String userName, String accountemail, String password, int role) {
+        this.userID = userID;
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
         this.address = address;
         // Set createdAt and updatedAt to the current date for new User
-        this.createdAt = new Date();
-        this.updatedAt = new Date();
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.userName = userName;
+        this.accountemail = accountemail;
+        this.password = password;
+        this.role = role;
     }
 
     // Getters and Setters
@@ -87,6 +100,34 @@ public class User {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getAccountemail() { return accountemail; }
+
+    public void setAccountemail(String accountemail) {this.accountemail = accountemail;}
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
+
 
     // toString method for debugging
     @Override
@@ -99,6 +140,10 @@ public class User {
                 ", address='" + address + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
+                ", userName=" + userName +
+                ", account_email=" + accountemail +
+                ", password=" + password +
+                ", role=" + role +
                 '}';
     }
 }
