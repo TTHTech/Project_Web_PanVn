@@ -20,6 +20,11 @@ public class AddProductControl extends HttpServlet {
 
         request.getRequestDispatcher("products.jsp").forward(request, response);
         response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html");
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+
+
         String url1 = request.getParameter("url1");
         String url2 = request.getParameter("url2");
         String url3 = request.getParameter("url3");

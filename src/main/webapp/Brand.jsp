@@ -28,7 +28,7 @@
                         <img src="${o.url1}" alt="${o.title}">
                         <div class="product-gallery-one-content-product-item-text">
                             <ul>
-                                <li><img src="assets/image/icon1.png" alt=""><p>Sale giá sốc</p></li>
+                                <li><img src="image/icon1.png" alt=""><p>Sale giá sốc</p></li>
                                 <li><a href="#" title="View Product"></a>${o.title}</li>
                                 <li><a href="">${o.price}<sup>đ</sup></a><span>${o.price}</span></li>
                                 <li>${o.price} <sup>đ</sup></li>

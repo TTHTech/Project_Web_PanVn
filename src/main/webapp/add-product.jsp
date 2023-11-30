@@ -5,7 +5,8 @@
   Time: 9:23 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+         pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,30 +14,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--Import css bootrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!--end import css bootrap-->
-    <!-- import fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <!-- end import fontawesome-->
-    <!--import my css-->
     <link rel="stylesheet" type="text/css" href="css/admin-style.css">
-    <!--end import my css-->
-    <!--import products css-->
     <link rel="stylesheet" type="text/css" href="css/products.css">
-    <!--End import products css-->
-    <!--import reponsive-->
     <link rel="stylesheet" type="text/css" href="css/responsive-add-product.css">
-    <!--End import reponsive-->
-    <!--import chosen css-->
     <link rel="stylesheet" type="text/css" href="chosen_v1.8.7/chosen.min.css">
-    <!--end import chosen css-->
-    <!--import menu component-->
     <link rel="stylesheet" type="text/css" href="css/component-menu-admin.css">
-    <!--end import menu component-->
-    <!-- google font -->
     <link
             href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700"
             rel="stylesheet"
@@ -45,10 +31,8 @@
             rel="stylesheet"
             href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     />
-    <!-- google font -->
     <title>Document</title>
     <style>
-        /* Định dạng style cho button */
         .custom-button {
             background-color: #22ff00; /* Màu nền là #22ff00 */
             color: white; /* Màu chữ là trắng */
@@ -61,21 +45,15 @@
 </head>
 
 <body>
-<!--Thẻ lớn nhất chứa cả trang web-->
 <div class="container-fluid table h-100">
-    <!--Chia ra từng hàng-->
     <div class="row table-row h-100">
-        <!--Thêm vào để text fixed-->
         <div class="col-2 col-sm-1 col-md-1 col-lg-2 col-xl-2 table-cell float-none align-top
             d-none d-sm-none d-md-block d-lg-block d-xl-block" id="side-menu-temp"></div>
-        <!--End Thêm vào để text fixed-->
 
 
-        <!--slide menu-->
         <div class="col-2 col-sm-1 col-md-1 col-lg-2 col-xl-2 table-cell float-none align-top h-100 fixed-top
             d-none d-sm-none d-md-block d-lg-block d-xl-block" id="side-menu">
             <div class="top-menu d-none d-lg-block"><span class="logo"><h2>Hello, Admin</h2></span></div>
-            <!-- <h4 class="d-none d-sm-none d-md-none d-lg-block d-xl-block">Trang quản trị</h4> -->
             <ul>
                 <li class="link">
                     <a href="admin" class="active">
