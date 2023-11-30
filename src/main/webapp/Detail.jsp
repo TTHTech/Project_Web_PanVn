@@ -14,36 +14,32 @@
     <title>Product Card/Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/SanPham.css">
-<%--    <link rel="stylesheet" href="css/home.css">--%>
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <style>
-        /*.product-detail td {*/
-        /*    padding-right: 10px; !* Để tạo khoảng cách giữa các cột *!*/
-        /*}*/
-
-        /*.product-detail td.label {*/
-        /*    font-weight: bold;*/
-        /*}*/
-        /*.container {*/
-        /*    display: flex;*/
-        /*    align-items: center;*/
-        /*}*/
-
+        .containerr {
+            display: flex;
+            /*align-items: center;*/
+        }
+        .containerr > * {
+            margin-left: 40px;
+        }
         .breadcrumb-item {
             list-style: none;
+            display: flex;
+            align-items: center;
         }
 
         .breadcrumb-item a {
             text-decoration: none;
             color: #000; /* Màu chữ mặc định */
-            display: flex;
-            align-items: center;
             font-size: 1em; /* Font size gấp đôi */
         }
 
         .breadcrumb-item a:hover {
             color: #007bff; /* Màu chữ khi di chuột qua */
         }
+
     </style>
 </head>
 <body>
@@ -52,8 +48,12 @@
 </header>
 <jsp:include page="Header.jsp"></jsp:include>
 <!-- =============================Header============================================ -->
-<div class="container">
-    <li class="breadcrumb-item"><a href="home">Trang Chủ >   <p> ${detail.title} </P> </a> </li>
+<div class="containerr">
+    <li class="breadcrumb-item">
+        <a href="home">Trang Chủ |></a>
+        <a href="brand?brandID=${detail.brandID}"> Brand |></a>
+        <p> ${detail.title} </P>
+    </li>
 </div>
 <div class = "card-wrapper" style="background-color: white">
     <div class="vertical-line"></div>
