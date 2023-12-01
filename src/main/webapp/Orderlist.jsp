@@ -6,8 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +34,16 @@
     <!--import css chung-->
     <link rel="stylesheet" type="text/css" href="css/content-5-page.css" />
     <!--End import css chung-->
+    <!--Import page css-->
+    <link rel="stylesheet" type="text/css" href="css/order-list.css" />
+    <!--End import page css-->
+    <!--import reponsive-->
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="css/responsive-order-list.css"
+    />
+    <!--End import reponsive-->
     <!--import menu component-->
     <link
             rel="stylesheet"
@@ -43,13 +51,6 @@
             href="css/component-menu-admin.css"
     />
     <!--end import menu component-->
-    <!--import responsive customer -->
-    <link
-            rel="stylesheet"
-            type="text/css"
-            href="css/responsive-customer.css"
-    />
-    <!--end import responsive customer -->
     <!-- google font -->
     <link
             href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700"
@@ -71,7 +72,7 @@
         <!--Thêm vào để text fixed-->
         <div
                 class="col-2 col-sm-1 col-md-1 col-lg-2 col-xl-2 table-cell float-none align-top
-     d-none d-sm-none d-md-block d-lg-block d-xl-block"
+         d-none d-sm-none d-md-block d-lg-block d-xl-block"
                 id="side-menu-temp"
         ></div>
         <!--End Thêm vào để text fixed-->
@@ -79,7 +80,7 @@
         <!--slide menu-->
         <div
                 class="col-2 col-sm-1 col-md-1 col-lg-2 col-xl-2 table-cell float-none align-top h-100 fixed-top
-     d-none d-sm-none d-md-block d-lg-block d-xl-block"
+         d-none d-sm-none d-md-block d-lg-block d-xl-block"
                 id="side-menu"
         >
             <div class="top-menu d-none d-lg-block">
@@ -97,8 +98,8 @@
                     </a>
                 </li>
 
-                <li class="link ads-button">
-                    <a href="custumer">
+                <li class="link">
+                    <a href="customer">
                         <span class="fas fa-users"></span>
                         <span
                                 class="d-none d-sm-none d-md-none d-lg-inline d-xl-inline ml-2"
@@ -107,8 +108,9 @@
                     </a>
                 </li>
 
-                <li class="link">
-                    <a href="order-list.jsp">
+
+                <li class="link ads-button">
+                    <a href="orderlist">
                         <span class="fas fa-shopping-cart"></span>
                         <span
                                 class="d-none d-sm-none d-md-none d-lg-inline d-xl-inline ml-2"
@@ -128,7 +130,7 @@
                                        <span class="fas fa-tags"></span>
                                        <span>Sản phẩm</span>
                                        <span class="badge badge-warning label-message float-right mr-1">20</span>
-                                     </a> -->
+                                   </a> -->
                     <a href="products">
                         <span class="fas fa-tags"></span>
                         <span
@@ -141,38 +143,12 @@
                         >
                     </a>
                 </li>
-
-                <!-- <ul class="collapse" id="collapse-post">
-                             <li class="link">
-                                 <a href="index.html">
-
-                                     <span>Danh sách sản phẩm</span>
-                                 </a>
-                             </li>
-                             <li class="link">
-                                 <a href="index.html">
-
-                                     <span>Sản phẩm</span>
-                                 </a>
-                             </li>
-                           </ul> -->
-
                 <li class="link">
-                    <a href="add-product.jsp">
+                    <a href="AddProduct.jsp">
                         <span class="fas fa-plus-circle"></span>
-                        <span
-                                class="d-none d-sm-none d-md-none d-lg-inline d-xl-inline ml-2"
-                        >Thêm mới</span
-                        >
+                        <span class="d-none d-sm-none d-md-none d-lg-inline d-xl-inline ml-2">Thêm mới</span>
                     </a>
                 </li>
-
-                <!-- <li class="link">
-                           <a href="index.html">
-                               <span class="fas fa-user"></span>
-                               <span class="d-none d-sm-none d-md-none d-lg-inline d-xl-inline ml-2">Nhân viên</span>
-                           </a>
-                         </li> -->
             </ul>
         </div>
         <!--End slide menu-->
@@ -213,7 +189,7 @@
                 >
                     <!-- <ul class="list-unstyled row ml-0 mr-0"> -->
                     <div class="col-0 col-lg-6 text-right d-none d-lg-block">
-                        Chào mừng đến trang quản lý
+                        Chào mừng đến trang quản lý đơn hàng
                     </div>
                     <div class="col-12 col-lg-6 text-right">
                         <a href="#" class="mr-4">
@@ -238,62 +214,154 @@
             <div id="dashboard-con">
                 <div id="content">
                     <header>
-                        <h5 class="mb-0">Danh sách khách hàng</h5>
+                        <h5 class="mb-0">Danh sách đơn hàng</h5>
                     </header>
 
                     <div class="content-inner">
-                        <!--Thanh tìm kiếm-->
-                        <div class="row search-row ml-0 mr-0">
-                            <div class="col-md-12 p-0">
-                                <div class="input-group input-group-sm mb-3">
+                        <!--Thanh tìm kiếm sản phẩm-->
+                        <form class="form row ml-0 mr-0 mb-4">
+                            <div class="form-row col-7 col-sm-9 col-lg-10 p-0 ml-0 mr-0">
+                                <div
+                                        class="form-group col-12 col-md-4 col-lg-3 mt-2 mb-0 pl-0"
+                                >
                                     <input
-                                            type="text"
-                                            class="form-control search-field"
-                                            id="search"
+                                            type="password"
+                                            class="form-control form-control-sm"
+                                            id="inputPassword2"
                                             placeholder="Tên khách hàng"
-                                            aria-label="Recipient's username"
-                                            aria-describedby="basic-addon2"
                                     />
-                                    <div class="input-group-append">
-                                        <button class="btn btn-success" type="button">
-                                            Tìm kiếm
-                                        </button>
-                                    </div>
+                                </div>
+
+                                <div
+                                        class="form-group col-12 col-sm-6 col-md-4 col-lg-3 mb-0 mt-2 d-flex"
+                                >
+                                    <label class="col-form-label col-form-label-sm mr-2"
+                                    >Từ</label
+                                    >
+                                    <!--Để tạm thẻ này sau này sửa thành date picker-->
+                                    <select class="custom-select custom-select-sm">
+                                        <option>10/4/2019</option>
+                                    </select>
+                                    <!--End Để tạm thẻ này sau này sửa thành date picker-->
+                                </div>
+
+                                <div
+                                        class="form-group col-12 col-sm-6 col-md-4 col-lg-3 mb-0 mt-2 d-flex"
+                                >
+                                    <label class="col-form-label col-form-label-sm mr-2"
+                                    >Đến</label
+                                    >
+                                    <!--Để tạm thẻ này sau này sửa thành date picker-->
+                                    <select class="custom-select custom-select-sm">
+                                        <option>10/4/2019</option>
+                                    </select>
+                                    <!--End Để tạm thẻ này sau này sửa thành date picker-->
+                                </div>
+
+                                <div
+                                        class="form-group col-12 col-sm-12 col-md-4 col-lg-3 mb-0 mt-2 pl-0"
+                                >
+                                    <select class="custom-select custom-select-sm">
+                                        <option>Xem tất cả</option>
+                                        <option>Đã thanh toán</option>
+                                        <option>Chưa thanh toán</option>
+                                    </select>
                                 </div>
                             </div>
-                        </div>
-                        <!--end thanh tìm kiếm-->
+                            <div class="col-5 col-sm-3 col-lg-2 pr-0 mt-2">
+                                <button type="button" class="btn btn-sm btn-success w-100">
+                                    <i class="fas fa-search"></i>&ensp;Tìm kiếm
+                                </button>
+                            </div>
+                        </form>
+                        <!--End thanh tìm kiếm sản phẩm-->
 
                         <!--Table hiển thị sản phẩm-->
                         <table class="table table-responsive-xl mb-4">
                             <thead>
                             <tr>
-                                <th>Mã khách hàng</th>
-                                <th>Họ tên</th>
-                                <th>Email</th>
-                                <th>Số điện thoại</th>
-                                <th>Thời gian đăng ký</th>
+                                <th>Mã đơn hàng</th>
+                                <th>Khách hàng</th>
+                                <th>Thời gian</th>
+                                <th class="text-center">Hình thức</th>
+                                <th class="text-center">Trạng thái</th>
+                                <th class="text-center">Chi tiết</th>
                                 <th class="text-center">Tác vụ</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            <c:forEach items="${listUser}" var="user" >
                             <!--Nội dung của một hàng-->
                             <tr>
-                                <td>${user.userID}</td>
-                                <td>${user.fullName}</td>
-                                <td>${user.email}</td>
-                                <td>${user.phone}</td>
-                                <td>${user.createdAt}</td>
+                                <td>KH120</td>
+                                <td>manhdz@gmail</td>
+                                <td>
+                                    <span>14/04/2019&nbsp;</span>
+                                    <span>13:21:25</span>
+                                </td>
+                                <td align="center">
+                        <span class="badge badge-pill badge-warning"
+                        >Đặt hàng</span
+                        >
+                                </td>
+                                <td align="center">
+                                    <span class="badge badge-light">Chưa thanh toán</span>
+                                </td>
+                                <td align="center">
+                                    <button
+                                            type="button"
+                                            class="btn btn-sm btn-primary"
+                                            data-toggle="modal"
+                                            data-target="#exampleModalCenter"
+                                    >
+                                        Xem chi tiết
+                                    </button>
+                                </td>
+
                                 <td align="center">
                                     <button class="btn btn-sm btn-danger" type="button">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </td>
                             </tr>
+
                             <!--End nội dung của một hàng-->
-                            </c:forEach>
+
+                            <!--Nội dung của một hàng-->
+                            <tr>
+                                <td>KH120</td>
+                                <td>manhdz@gmail</td>
+                                <td>
+                                    <span>14/04/2023&nbsp;</span>
+                                    <span>13:21:25</span>
+                                </td>
+                                <td align="center">
+                        <span class="badge badge-pill badge-warning"
+                        >Đặt hàng</span
+                        >
+                                </td>
+                                <td align="center">
+                                    <span class="badge badge-info">đang giao</span>
+                                </td>
+                                <td align="center">
+                                    <button
+                                            type="button"
+                                            class="btn btn-sm btn-primary"
+                                            data-toggle="modal"
+                                            data-target="#exampleModalCenter"
+                                    >
+                                        Xem chi tiết
+                                    </button>
+                                </td>
+
+                                <td align="center">
+                                    <button class="btn btn-sm btn-danger" type="button">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!--End nội dung của một hàng-->
                             </tbody>
                         </table>
                         <!--End Table hiển thị sản phẩm-->
@@ -334,7 +402,7 @@
                                                     <p>Khách hàng:</p>
                                                 </div>
                                                 <div class="col-9">
-                                                    Lê Tường Qui
+                                                    Hoàng Công Mạnh
                                                 </div>
                                             </div>
 

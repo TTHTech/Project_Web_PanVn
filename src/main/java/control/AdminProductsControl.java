@@ -1,10 +1,7 @@
 package control;
-import entity.Brand;
 import entity.Product;
-import entity.User;
 import  dao.productDAO;
-import dao.brandDAO;
-import dao.userDAO;
+
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -12,9 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet(name = "ProductsControl", urlPatterns = {"/products"})
+@WebServlet(name = "AdminProductsControl", urlPatterns = {"/products"})
 
-public class ProductsControl extends HttpServlet{
+public class AdminProductsControl extends HttpServlet{
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.

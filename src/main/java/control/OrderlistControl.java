@@ -1,9 +1,7 @@
 package control;
-import entity.Brand;
-import entity.Product;
+import dao.customerDAO;
+import entity.Customer;
 import entity.User;
-import  dao.productDAO;
-import dao.brandDAO;
 import dao.userDAO;
 import java.io.IOException;
 import java.util.List;
@@ -12,8 +10,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet(name = "AdminControl", urlPatterns = {"/admin"})
-public class AdminControl extends HttpServlet {
+@WebServlet(name = "OrderlistControl", urlPatterns = {"/orderlist"})
+public class OrderlistControl extends HttpServlet{
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -26,11 +24,10 @@ public class AdminControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        userDAO dao = new userDAO();
-        List<User> listUser = dao.getAllUser();
-        request.setAttribute("listUser", listUser);
 
-        request.getRequestDispatcher("Admin.jsp").forward(request, response);
+
+
+        request.getRequestDispatcher("Orderlist.jsp").forward(request, response);
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

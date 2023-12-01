@@ -1,4 +1,6 @@
 package control;
+import dao.customerDAO;
+import entity.Customer;
 import entity.User;
 import dao.userDAO;
 import java.io.IOException;
@@ -23,12 +25,12 @@ public class CustomerControl extends HttpServlet{
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        userDAO dao = new userDAO();
-        List<User> listUser = dao.getAllUser();
-        request.setAttribute("listUser", listUser);
+        customerDAO dao = new customerDAO();
+        List<Customer> listCustomer = dao.getAllCustomer();
+        request.setAttribute("listCustomer", listCustomer);
 
 
-        request.getRequestDispatcher("customer.jsp").forward(request, response);
+        request.getRequestDispatcher("Customer.jsp").forward(request, response);
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

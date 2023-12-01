@@ -1,10 +1,8 @@
 package control;
-import entity.Brand;
+import dao.customerDAO;
 import entity.Product;
-import entity.User;
 import  dao.productDAO;
-import dao.brandDAO;
-import dao.userDAO;
+
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -12,25 +10,23 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet(name = "AdminControl", urlPatterns = {"/admin"})
-public class AdminControl extends HttpServlet {
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+@WebServlet(name = "AdminDeleteUser", urlPatterns = {"/deleteuser"})
+public class AdminDeleteUser extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        userDAO dao = new userDAO();
-        List<User> listUser = dao.getAllUser();
-        request.setAttribute("listUser", listUser);
+        response.setContentType("text/html");
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
 
-        request.getRequestDispatcher("Admin.jsp").forward(request, response);
+        String userID0 = request.getParameter("userID");
+        int userID = Integer.parseInt(userID0);
+        System.out.println(userID);
+
+        customerDAO dao = new customerDAO();
+        dao.deleteCustomer(userID0);
+
+        request.getRequestDispatcher("admin").forward(request, response);
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

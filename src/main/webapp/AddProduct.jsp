@@ -71,7 +71,7 @@
 
 
                 <li class="link">
-                    <a href="order-list.jsp">
+                    <a href="orderlist">
                         <span class="fas fa-shopping-cart"></span>
                         <span class="d-none d-sm-none d-md-none d-lg-inline d-xl-inline ml-2">Đơn hàng</span>
                         <span class="badge badge-success d-none d-sm-none d-md-none d-lg-inline d-xl-inline">40</span>
@@ -85,7 +85,7 @@
                     </a>
                 </li>
                 <li class="link ads-button">
-                    <a href="add-product.jsp">
+                    <a href="AddProduct.jsp">
                         <span class="fas fa-plus-circle"></span>
                         <span class="d-none d-sm-none d-md-none d-lg-inline d-xl-inline ml-2">Thêm mới</span>
                     </a>
@@ -289,7 +289,6 @@
                                     </div>
                                 </div>
                                 <div class="custom-button">
-                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                                     <input type="submit" class="btn btn-success" value="Save">
                                 </div>
                             </form>

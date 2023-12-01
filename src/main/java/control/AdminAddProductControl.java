@@ -1,10 +1,7 @@
 package control;
-import entity.Brand;
 import entity.Product;
-import entity.User;
 import  dao.productDAO;
-import dao.brandDAO;
-import dao.userDAO;
+
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -12,13 +9,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet(name = "AddProductControl", urlPatterns = {"/addproducts"})
+@WebServlet(name = "AdminAddProductControl", urlPatterns = {"/addproducts"})
 
-public class AddProductControl extends HttpServlet {
+public class AdminAddProductControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        request.getRequestDispatcher("products.jsp").forward(request, response);
         response.setContentType("text/html;charset=UTF-8");
         response.setContentType("text/html");
         request.setCharacterEncoding("UTF-8");
@@ -60,10 +56,7 @@ public class AddProductControl extends HttpServlet {
         dao.insertGallery(url1, url2, url3, url4);
         dao.insertProductDetail(processor, ram, storage, graphicsCard, operatingSystem, prdescription, discount);
         dao.insertProduct(title, price, description, brandID, color, productDetailID);
-        String url = "/products.jsp";
-        getServletContext()
-                .getRequestDispatcher(url)
-                .forward(request, response);
+
         request.getRequestDispatcher("products").forward(request, response);
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
