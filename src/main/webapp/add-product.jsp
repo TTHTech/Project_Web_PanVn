@@ -85,7 +85,7 @@
                     </a>
                 </li>
                 <li class="link ads-button">
-                    <a href="AddProduct.jsp">
+                    <a href="add-product.jsp">
                         <span class="fas fa-plus-circle"></span>
                         <span class="d-none d-sm-none d-md-none d-lg-inline d-xl-inline ml-2">Thêm mới</span>
                     </a>
