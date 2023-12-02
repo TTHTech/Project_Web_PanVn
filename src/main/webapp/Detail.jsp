@@ -129,12 +129,12 @@
                 <p class = "new-price">Giá mới: <span>5.999.999</span></p>
             </div>
             <div class = "purchase-info">
-                <input type = "number" min = "0" value = "1">
-                <a href="GioHang?productCode=sanpham8">
-                    <button type = "button" class = "btn">
+                <form action="addproductstocart" method="post">
+                    <input type = "number" min = "0" value = "1" name="quantity">
+                    <button type = "submit" class = "btn" name="add" value="${detail.productID}">
                         Thêm vào giỏ hàng <i class = "fas fa-shopping-cart"></i>
                     </button>
-                </a>
+                </form>
                 <button type = "button" class = "btn">Mua ngay</button>
             </div>
         </div>
