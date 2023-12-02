@@ -248,6 +248,15 @@ public class productDAO {
         } catch (Exception e) {
         }
     }
+    public void deleteGalley(int ID){
+        String queryGallery = "DELETE FROM Gallery WHERE galleryID='"+ID+"'";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(queryGallery);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
     public void insertProductDetail(String processor, String ram, String storage, String graphicsCard, String operatingSystem, String prdescription, Double discount){
         String queryProductDetail = "INSERT INTO ProductDetail (processor, ram, storage, graphicsCard, operatingSystem, description, discount) VALUES(N'"+processor+"', N'"+ram+"', N'"+storage+"', N'"+graphicsCard+"', N'"+operatingSystem+"', N'"+prdescription+"','"+discount+"')";
         try {
@@ -257,8 +266,26 @@ public class productDAO {
         } catch (Exception e) {
         }
     }
+    public void deleteProductDetail(int ID){
+        String queryProductDetail = "DELETE FROM ProductDetail WHERE productDetailID='"+ID+"'";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(queryProductDetail);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
     public void insertProduct(String title, Double price, String description, Double brandID, String color, String productDetailID){
         String queryProduct = "INSERT INTO Product (title, price, description, brandID, color, productDetailID) VALUES(N'"+title+"','"+price+"',N'"+description+"','"+brandID+"',N'"+color+"','"+productDetailID+"')";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(queryProduct);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+    public void deleteProduct(int ID){
+        String queryProduct = "DELETE FROM Product WHERE productID='"+ID+"'";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(queryProduct);

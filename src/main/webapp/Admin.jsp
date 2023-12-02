@@ -248,17 +248,17 @@
 
                                 <tbody>
                                 <c:forEach items="${listUser}" var="user" >
-                                <tr>
-                                    <td>${user.userID}</td>
-                                    <td>${user.fullName}</td>
-                                    <td>${user.userName}</td>
-                                    <td>${user.accountemail}</td>
-                                    <td>${user.createdAt}</td>
-                                    <td align="center"><a href="#" class="badge badge-pill badge-danger">
-                                        Xóa
-                                    </a>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>${user.userID}</td>
+                                        <td>${user.fullName}</td>
+                                        <td>${user.userName}</td>
+                                        <td>${user.accountemail}</td>
+                                        <td>${user.createdAt}</td>
+                                        <td align="center"><a href="#" class="badge badge-pill badge-danger">
+                                            Xóa
+                                        </a>
+                                        </td>
+                                    </tr>
                                 </c:forEach>
                                 </tbody>
                             </table>
