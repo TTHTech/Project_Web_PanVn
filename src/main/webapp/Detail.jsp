@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -129,13 +130,13 @@
                 <p class = "new-price">Giá mới: <span>5.999.999</span></p>
             </div>
             <div class = "purchase-info">
-                <input type = "number" min = "0" value = "1">
-                <a href="GioHang?productCode=sanpham8">
-                    <button type = "button" class = "btn">
-                        Thêm vào giỏ hàng <i class = "fas fa-shopping-cart"></i>
-                    </button>
-                </a>
-                <button type = "button" class = "btn">Mua ngay</button>
+                <form action="cart" method="post">
+                    <input type="hidden" name="productID" value="${detail.productID}">
+                    <input type="number" name="quantity" min="1" value="1">
+                    <input type="submit" value="Add to cart">
+                </form>
+
+            <%--                <button type = "button"  class = "btn">Mua ngay</button>--%>
             </div>
         </div>
     </div>

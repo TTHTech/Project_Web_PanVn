@@ -4,19 +4,18 @@
  * and open the template in the editor.
  */
 package control;
-
-
 import entity.Brand;
+import entity.Cart;
+import entity.Item;
 import entity.Product;
 import  dao.productDAO;
 import dao.brandDAO;
 import java.io.IOException;
 import java.util.List;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 
 /**
  *
@@ -25,69 +24,94 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "CartControl", urlPatterns = {"/cart"})
 public class CartControl extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        //b1: get data from dao
-       productDAO dao = new productDAO();
-       brandDAO data = new brandDAO();
-        List<Product> list = dao.getAllProduct();
-        List<Product> lastfive = dao.getfiveLast();
-        List<Brand> listB =  data.getAllBrand();
-        request.setAttribute("listP", list);
-        request.setAttribute("five", lastfive);
-        request.setAttribute("listB", listB);
-        request.getRequestDispatcher("Cart.jsp").forward(request, response);
-        //404 -> url
-        //500 -> jsp properties
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html");
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        String url = "/Detail.jsp";
+        ServletContext sc = getServletContext();
+
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "cart";
+        }
+
+        if (action.equals("shop")) {
+            url = "/Detail.jsp";
+        }
+        else if (action.equals("cart")) {
+            String productID = request.getParameter("productID");
+            String quantityString = request.getParameter("quantity");
+
+            HttpSession session = request.getSession();
+            Cart cart = (Cart) session.getAttribute("cart");
+            if (cart == null) {
+                cart = new Cart();
+            }
+
+            int quantity;
+            try {
+                quantity = Integer.parseInt(quantityString);
+                if (quantity < 0) {
+                    quantity = 1;
+                }
+            } catch (NumberFormatException nfe) {
+                quantity = 1;
+            }
+
+            String id = request.getParameter("pid");
+            productDAO dao = new productDAO();
+            Product p = dao.getProductByID(id);
+
+//
+//            boolean isNewItem = true;
+//            for (Item item : cart.getItems()) {
+//                if (item.getProduct().getProductID().equals(product.getProductID())) {
+//
+//                    item.setQuantity(item.getQuantity() + 1);
+//                    isNewItem = false;
+//                    break;
+//                }
+//            }
+//
+//            if (isNewItem) {
+//                Item lineItem = new Item();
+//                lineItem.setProduct(product);
+//                lineItem.setQuantity(quantity);
+//                cart.addItem(lineItem);
+//            }
+
+            session.setAttribute("cart", cart);
+            url = "/Cart.jsp";
+        }
+        else if (action.equals("remove")) {
+
+            String productCode = request.getParameter("productCode");
+
+            HttpSession session = request.getSession();
+            Cart cart = (Cart) session.getAttribute("cart");
+
+//            if (cart != null) {
+//                cart.removeItem(productID);
+//            }
+
+            session.setAttribute("cart", cart);
+            url = "/Cart.jsp";
+        }
+
+        else if (action.equals("checkout")) {
+            url = "/checkout.jsp";
+        }
+
+        sc.getRequestDispatcher(url).forward(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doPost(request, response);
+    }
 
 }

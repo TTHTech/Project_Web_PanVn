@@ -5,13 +5,22 @@ public class Item {
 
     private Product product;
     private int quantity;
+    private double price;
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
     public Item() {
     }
 
-    public Item(Product product, int quantity) {
+    public Item(Product product, int quantity , double price) {
         this.product = product;
         this.quantity = quantity;
+        this.price = price;
     }
 
     // Getters and Setters
