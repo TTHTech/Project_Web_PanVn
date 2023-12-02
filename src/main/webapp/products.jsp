@@ -254,27 +254,27 @@
 
                             <tbody>
                             <c:forEach items="${listPro}" var="product" >
-                            <!--Thông tin một sản phẩm-->
-                            <tr>
-                                <td>${product.productID}</td>
-                                <td>${product.title}</td>
-                                <td>${product.brandID}</td>
-                                <td>${product.ram}</td>
-                                <td align="center">
-                                    <img src="${product.url1}" class="show-product-image">
-                                </td>
-                                <td>
-                                    <div>
-                                        <div class="badge badge-warning mb-1">Đang giảm giá</div>
-                                        <div>Giá:&nbsp;<span>${product.price}</span>đ</div>
-                                    </div>
-                                </td>
-                                <td align="center">
-                                    <button type="button" class="btn btn-sm btn-primary">Sửa</button>
-                                    <button type="button" class="btn btn-sm btn-danger">Xóa</button>
-                                </td>
-                            </tr>
-                            <!--End thông tin một sản phẩm-->
+                                <!--Thông tin một sản phẩm-->
+                                <tr>
+                                    <td>${product.productID}</td>
+                                    <td>${product.title}</td>
+                                    <td>${product.brandID}</td>
+                                    <td>${product.ram}</td>
+                                    <td align="center">
+                                        <img src="${product.url1}" class="show-product-image">
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <div class="badge badge-warning mb-1">Đang giảm giá</div>
+                                            <div>Giá:&nbsp;<span>${product.price}</span>đ</div>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <button type="button" class="btn btn-sm btn-primary">Sửa</button>
+                                        <button type="button" class="btn btn-sm btn-danger">Xóa</button>
+                                    </td>
+                                </tr>
+                                <!--End thông tin một sản phẩm-->
                             </c:forEach>
                             </tbody>
                         </table>
