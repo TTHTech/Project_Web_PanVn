@@ -110,7 +110,7 @@
 
 
                 <li class="link ads-button">
-                    <a href="order-list.jsp">
+                    <a href="Oderlist.jsp">
                         <span class="fas fa-shopping-cart"></span>
                         <span
                                 class="d-none d-sm-none d-md-none d-lg-inline d-xl-inline ml-2"

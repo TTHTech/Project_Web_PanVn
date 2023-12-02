@@ -71,7 +71,11 @@
 
 
                 <li class="link">
+<<<<<<< HEAD
                     <a href="orderlist">
+=======
+                    <a href="Oderlist.jsp">
+>>>>>>> origin/main
                         <span class="fas fa-shopping-cart"></span>
                         <span class="d-none d-sm-none d-md-none d-lg-inline d-xl-inline ml-2">Đơn hàng</span>
                         <span class="badge badge-success d-none d-sm-none d-md-none d-lg-inline d-xl-inline">40</span>
@@ -126,6 +130,7 @@
                 </div>
             </header>
             <div id="dashboard-con">
+<<<<<<< HEAD
                 <div class="card mt-3">
                     <div class="card-header">
                         <h5 class="mb-0">Thông tin sản phẩm</h5>
@@ -294,6 +299,177 @@
                         </form>
                     </div>
                 </div>
+=======
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            <h5 class="mb-0">Thông tin sản phẩm</h5>
+                        </div>
+                        <div class="card-body">
+                            <form action="addproducts" method="post">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label"><b>Hình ảnh 1</b></label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="url1" class="form-control-file" id="Hinh1">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label"><b>Hình ảnh 2</b></label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="url2" class="form-control-file" id="Hinh2">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label"><b>Hình ảnh 3</b></label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="url3" class="form-control-file" id="Hinh3">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label"><b>Hình ảnh 4</b></label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="url4" class="form-control-file" id="Hinh4">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="title" class="col-sm-2 col-form-label"><b>Tên sản phẩm</b></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="title" class="form-control" id="title"
+                                               placeholder="Nhập vào tên sản phẩm">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="price" class="col-sm-2 col-form-label"><b>Giá sản phẩm</b></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="price" class="form-control" id="price"
+                                               placeholder="2000">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="description" class="col-sm-2 col-form-label"><b>Mô tả sản
+                                        phẩm</b></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="description" class="form-control" id="description"
+                                               placeholder="Mô tả sản phẩm">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="brandID" class="col-sm-2 col-form-label"><b>Mã Brand</b></label>
+                                    <div class="col-sm-10">
+                                        <select name="brandID" class="custom-select my-1 mr-sm-2" id="brandID">
+                                            <option selected>Thuộc loại Brand</option>
+                                            <option value="1">Laptop Apple</option>
+                                            <option value="2">Laptop Asus</option>
+                                            <option value="3">Laptop Dell</option>
+                                            <option value="4">Laptop HP</option>
+                                            <option value="5">Laptop Lenovo</option>
+                                            <option value="6">Laptop Acer</option>
+                                            <option value="7">Laptop Microsoft</option>
+                                            <option value="8">Laptop MSI</option>
+                                            <option value="9">Laptop Samsung</option>
+                                            <option value="10">Laptop Razer</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="color" class="col-sm-2 col-form-label"><b>Màu sắc</b></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="color" class="form-control" id="color"
+                                               placeholder="Màu vàng">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="processor" class="col-sm-2 col-form-label"><b>Loại CPU</b></label>
+                                    <div class="col-sm-10">
+                                        <select name="processor" class="custom-select my-1 mr-sm-2" id="processor">
+                                            <option selected>Loại CPU</option>
+                                            <option value="Intel Core i3">Intel Core i3</option>
+                                            <option value="Intel Core i5">Intel Core i5</option>
+                                            <option value="Intel Core i7">Intel Core i7</option>
+                                            <option value="Intel Core i9">Intel Core i9</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="ram" class="col-sm-2 col-form-label"><b>Dung lượng Ram</b></label>
+                                    <div class="col-sm-10">
+                                        <select name="ram" class="custom-select my-1 mr-sm-2" id="ram">
+                                            <option selected>Dung lượng Ram laptop</option>
+                                            <option value="8GB">8GB</option>
+                                            <option value="16GB">16GB</option>
+                                            <option value="32GB">32GB</option>
+                                            <option value="64GB">64GB</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="storage" class="col-sm-2 col-form-label"><b>Dung lượng ổ đĩa</b></label>
+                                    <div class="col-sm-10">
+                                        <select name="storage" class="custom-select my-1 mr-sm-2" id="storage">
+                                            <option selected>Dung lượng ổ đĩa</option>
+                                            <option value="128GB SSD">128GB SSD</option>
+                                            <option value="256GB SSD">256GB SSD</option>
+                                            <option value="512GB SSD">512GB SSD</option>
+                                            <option value="1TB SSD">1TB SSD</option>
+                                            <option value="128GB HDD">128GB HDD</option>
+                                            <option value="256GB HDD">256GB HDD</option>
+                                            <option value="512GB HDD">512GB HDD</option>
+                                            <option value="1TB HDD">1TB HDD</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="graphicsCard" class="col-sm-2 col-form-label"><b>Card đồ họa</b></label>
+                                    <div class="col-sm-10">
+                                        <select name="graphicsCard" class="custom-select my-1 mr-sm-2"
+                                                id="graphicsCard">
+                                            <option selected>Card đồ họa laptop</option>
+                                            <option value="NVIDIA GTX 1650">NVIDIA GTX 1650</option>
+                                            <option value="Intel Iris Plus Graphics">Intel Iris Plus Graphics</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="operatingSystem" class="col-sm-2 col-form-label"><b>Hệ điều
+                                        hành</b></label>
+                                    <div class="col-sm-10">
+                                        <select name="operatingSystem" class="custom-select my-1 mr-sm-2"
+                                                id="operatingSystem">
+                                            <option selected>Hệ điều hành laptop</option>
+                                            <option value="Windows 10">Windows 10</option>
+                                            <option value="Windows 11">Windows 11</option>
+                                            <option value="Windows 12">Windows 12</option>
+                                            <option value="Ubuntu">Ubuntu</option>
+                                            <option value="Linux">Linux</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="prdescription" class="col-sm-2 col-form-label"><b>Loại màng
+                                        hình</b></label>
+                                    <div class="col-sm-10">
+                                        <select name="prdescription" class="custom-select my-1 mr-sm-2"
+                                                id="prdescription">
+                                            <option selected>Loại màng hình laptop</option>
+                                            <option value="High-performance laptop">High-performance laptop</option>
+                                            <option value="Budget-friendly laptop">Budget-friendly laptop</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="discount" class="col-sm-2 col-form-label"><b>Giảm giá theo phần trăm</b></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="discount" class="form-control" id="discount"
+                                               placeholder="10">
+                                    </div>
+                                </div>
+                                <div class="custom-button">
+                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                    <input type="submit" class="btn btn-success" value="Save">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+>>>>>>> origin/main
             </div>
             <footer id="admin-footer">
             </footer>
