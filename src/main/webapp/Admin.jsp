@@ -15,59 +15,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--Import css bootrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!--end import css bootrap-->
-    <!-- import fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <!-- end import fontawesome-->
-    <!--import my css-->
     <link rel="stylesheet" type="text/css" href="css/admin-style.css">
-    <!--end import my css-->
-    <!--import page css-->
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <!--End import page css-->
-    <!--import page css-->
     <link rel="stylesheet" type="text/css" href="css/report.css">
-    <!--End import page css-->
-    <!--import reponsive-->
     <link rel="stylesheet" type="text/css" href="css/responsive-index.css">
-    <!--End import reponsive-->
-    <!--import menu component-->
     <link rel="stylesheet" type="text/css" href="css/component-menu-admin.css">
-    <!--end import menu component-->
-    <!--import component report card-->
     <link rel="stylesheet" type="text/css" href="css/component-report-card.css">
-    <!--End import component report card-->
-    <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
 
-    <!-- google font -->
     <title>Trang quản lý</title>
 </head>
 
 <body>
-<!--Thẻ lớn nhất chứa cả trang web-->
 
 <div class="container-fluid table h-100">
-    <!--Chia ra từng hàng-->
     <div class="row table-row h-100">
-        <!--Thêm vào để text fixed-->
         <div class="col-2 col-sm-1 col-md-1 col-lg-2 col-xl-2 table-cell float-none align-top
      d-none d-sm-none d-md-block d-lg-block d-xl-block" id="side-menu-temp">
-
         </div>
-        <!--End Thêm vào để text fixed-->
-
-
-        <!--slide menu-->
         <div class="col-2 col-sm-1 col-md-1 col-lg-2 col-xl-2 table-cell float-none align-top h-100 fixed-top
    d-none d-sm-none d-md-block d-lg-block d-xl-block" id="side-menu">
             <div class="top-menu d-none d-lg-block"><span class="logo"><h2>Hello, Admin</h2></span></div>
-            <!-- <h4 class="d-none d-sm-none d-md-none d-lg-block d-xl-block">Trang quản trị</h4> -->
             <ul>
                 <li class="link ads-button">
                     <a href="admin">
@@ -84,15 +57,14 @@
                 </li>
 
                 <li class="link">
-                    <a href="order-list.jsp">
+                    <a href="orderlist">
                         <span class="fas fa-shopping-cart"></span>
                         <span class="d-none d-sm-none d-md-none d-lg-inline d-xl-inline ml-2">Đơn hàng</span>
                         <span class="badge badge-success d-none d-sm-none d-md-none d-lg-inline d-xl-inline">40</span>
                     </a>
                 </li>
 
-                <!--Menu sản phẩm-->
-                <!--collape-->
+
                 <li class="link">
                     <a href="products">
                         <span class="fas fa-tags"></span>
@@ -100,31 +72,16 @@
                         <span class="badge badge-success d-none d-sm-none d-md-none d-lg-inline d-xl-inline">20</span>
                     </a>
                 </li>
-
                 <li class="link">
-                    <a href="add-product.jsp">
+                    <a href="AddProduct.jsp">
                         <span class="fas fa-plus-circle"></span>
                         <span class="d-none d-sm-none d-md-none d-lg-inline d-xl-inline ml-2">Thêm mới</span>
                     </a>
                 </li>
-
-                <!-- <li class="link">
-                    <a href="index.html">
-                        <span class="fas fa-user"></span>
-                        <span class="d-none d-sm-none d-md-none d-lg-inline d-xl-inline ml-2">Nhân viên</span>
-                    </a>
-                  </li> -->
             </ul>
         </div>
-        <!--End slide menu-->
-
-        <!--Nội dung-->
-        <!--Mặc định padding -15 của col-->
         <div class="col-12 col-sm-12 col-md-11 col-lg-10 col-xl-10 table-cell float-none align-top p-0" id="col-content">
-
             <header class="nav-header row m-0">
-                <!--mặc định bị padding-->
-                <!-- <div class="row m-0 pt-4 pb-3"> -->
                 <div class="content-left col-2 col-sm-6 col-md-7 col-lg-3 col-xl-4 pr-0 d-flex align-items-center">
                     <nav class="navbar-default d-block d-sm-block d-md-none d-lg-none d-xl-none d-none">
                         <button class="navbar-toggler collapsed p-0" type="button" data-toggle="offcanvas" data-target="#side-menu">
@@ -135,7 +92,6 @@
                 </div>
 
                 <div class="content-right row ml-0 mr-0 col-10 col-sm-6 col-md-5 col-lg-9 col-xl-8 d-flex align-items-center">
-                    <!-- <ul class="list-unstyled row ml-0 mr-0"> -->
                     <div class="col-0 col-lg-6 text-right d-none d-lg-block">Chào mừng đến trang quản lý</div>
                     <div class="col-12 col-lg-6 text-right">
                         <a href="#" class="mr-4">
@@ -151,23 +107,13 @@
                             &nbsp;Đăng xuất
                         </a>
                     </div>
-                    <!-- </ul> -->
                 </div>
-                <!-- </div> -->
             </header>
 
 
-            <!--Nội dung trang index-->
             <div class="dashboard-con" id="dashboard-con">
-
-                <!--Row hiển thị biểu đồ-->
-                <!--Hàng chứa nội dung lượt tương tác trong ngày-->
-
                 <div class="row">
-
                     <div class="col-12 col-sm-4">
-
-                        <!--Thẻ chứa lượt view trong ngày-->
                         <div class="report-content-con report-view">
                             <div>
                                 <i class="fas fa-eye"></i>
@@ -180,13 +126,9 @@
                                 <span></span>
                             </div>
                         </div>
-                        <!--End Thẻ chứa lượt view trong ngày-->
-
                     </div>
 
                     <div class="col-12 col-sm-4">
-
-                        <!--Thẻ chứa lượt view trong ngày-->
                         <div class="report-content-con report-view">
                             <div>
                                 <i class="fas fa-shopping-cart"></i>
@@ -199,75 +141,62 @@
                                 <span></span>
                             </div>
                         </div>
-
-                        <!--End Thẻ chứa lượt view trong ngày-->
-
                     </div>
 
                     <div class="col-12 col-sm-4">
-
-                        <!--Thẻ chứa lượt view trong ngày-->
                         <div class="report-content-con report-view">
                             <div>
                                 <i class="fas fa-money-check-alt"></i>
                                 <h6 class="d-inline">Doanh thu trong ngày</h6>
                             </div>
-
                             <div class="d-flex flex-column mt-1">
                                 <span></span>
                                 <b>5.000.000đ</b>
                                 <span></span>
                             </div>
                         </div>
-                        <!--End Thẻ chứa lượt view trong ngày-->
-
                     </div>
-
                 </div>
 
-
-                <!--Row 1-->
                 <div class="row">
                     <div class="col-12">
                         <div class="admin-content-con">
                             <header>
-                                <h5>Danh sách khách hàng</h5>
+                                <h5>Danh sách User khách hàng</h5>
                             </header>
 
                             <table class="table table-responsive-sm">
                                 <thead>
                                 <tr>
-                                    <th>STT</th>
                                     <th>Tên người dùng</th>
-                                    <th>Tên tài khoản</th>
-                                    <th>Email</th>
+                                    <th>Tên tài khoản đăng nhập </th>
+                                    <th>Email đăng ký</th>
                                     <th>Ngày tạo</th>
                                     <th class="text-center">Tác vụ</th>
                                 </tr>
                                 </thead>
 
                                 <tbody>
-                                <c:forEach items="${listUser}" var="user" >
-                                    <tr>
-                                        <td>${user.userID}</td>
-                                        <td>${user.fullName}</td>
-                                        <td>${user.userName}</td>
-                                        <td>${user.accountemail}</td>
-                                        <td>${user.createdAt}</td>
-                                        <td align="center"><a href="#" class="badge badge-pill badge-danger">
-                                            Xóa
-                                        </a>
-                                        </td>
-                                    </tr>
+                                <c:forEach items="${listUser}" var="user">
+                                    <form action="deleteuser" method="post">
+                                        <tr>
+                                            <td>${user.fullName}</td>
+                                            <td>${user.userName}</td>
+                                            <td>${user.accountemail}</td>
+                                            <td>${user.createdAt}</td>
+                                            <td align="center">
+                                                <button type="submit" name="userID" value="${user.userID}" class="badge badge-pill badge-danger">Xóa</button>
+                                            </td>
+                                            </td>
+                                        </tr>
+                                    </form>
                                 </c:forEach>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-                <!--End row 1-->
 
-                <!--Trạng thái đơn hàng-->
                 <div class="row">
                     <div class="col-12">
                         <div class="admin-content-con">
@@ -369,24 +298,13 @@
                         </div>
                     </div>
                 </div>
-                <!--End Trạng thái đơn hàng-->
-
             </div>
-            <!--End Nội dung trang index-->
-
-            <!--footer-->
             <footer id="admin-footer">
-
-
-
             </footer>
-            <!--end footer-->
         </div>
     </div>
 </div>
 </div>
-
-<!--import script bootrap-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -396,18 +314,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-<!--end import sript bootrap-->
-
-<!--Import chart.js-->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<!--End chart.js-->
-
-<!--Import my chart script-->
 <script src="../js/reportchartscript.js"></script>
-<!--End import my chart script-->
-<!--import nav-bar-side-menu script-->
 <script src="../js/nav-bar-side-menu.js"></script>
-<!--End import nav-bar-side-menu script-->
 </body>
 
 </html>
