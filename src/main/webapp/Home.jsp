@@ -1,6 +1,31 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
+<%
+    String loginError = request.getParameter("loginError");
+    if (loginError != null && loginError.equals("1")) {
+%>
+<script>
+    alert("Sai thông tin đăng nhập. Vui lòng đăng nhập lại.");
+</script>
+<%
+    }
+%>
+<%-- Check for registration success --%>
+<% String registerSuccess = request.getParameter("registerSuccess"); %>
+<% if (registerSuccess != null && registerSuccess.equals("1")) { %>
+<script type="text/javascript">
+    alert('Đăng ký thành công!');
+</script>
+<% } %>
+
+<%-- Check for registration error --%>
+<% String registerError = request.getParameter("registerError"); %>
+<% if (registerError != null && registerError.equals("1")) { %>
+<script type="text/javascript">
+    alert('Email đã tồn tại. Vui lòng đăng ký lại.');
+</script>
+<% } %>
 <html lang="en">
 <jsp:include page="Header.jsp"></jsp:include>
 <!------------------------Section and slider--------------------------->

@@ -192,18 +192,20 @@
                         Chào mừng đến trang quản lý đơn hàng
                     </div>
                     <div class="col-12 col-lg-6 text-right">
-                        <a href="#" class="mr-4">
-                            <span class="fas fa-bell"></span>
-                            <span class="badge badge-success label-message">3</span>
-                        </a>
-                        <a href="#" class="mr-5">
-                            <span class="fas fa-envelope"></span>
-                            <span class="badge badge-success label-message">3</span>
-                        </a>
-                        <a href="#" class="logout">
-                            <span class="fas fa-sign-out-alt"></span>
-                            &nbsp;Đăng xuất
-                        </a>
+                        <form id="logoutForm" action="LogoutControl" method="get">
+                            <a href="#" class="mr-4">
+                                <span class="fas fa-bell"></span>
+                                <span class="badge badge-success label-message">3</span>
+                            </a>
+                            <a href="#" class="mr-5">
+                                <span class="fas fa-envelope"></span>
+                                <span class="badge badge-success label-message">3</span>
+                            </a>
+                            <a href="#" class="logout" onclick="document.getElementById('logoutForm').submit();">
+                                <span class="fas fa-sign-out-alt"></span>
+                                &nbsp; Đăng xuất
+                            </a>
+                        </form>
                     </div>
                     <!-- </ul> -->
                 </div>

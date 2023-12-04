@@ -1,0 +1,541 @@
+:root {
+  --primary-color: #e30019;
+  --bold-color: #be1529;
+  --border-radius: 4px;
+}
+* {
+  box-sizing: border-box;
+}
+.header {
+  /* position: fixed; */
+  width: 100%;
+  height: 74px;
+  background-color: var(--primary-color);
+  top: 0;
+  position: sticky;
+  z-index: 10;
+}
+.header__login {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+}
+.header__login.remove{
+  display: none;
+}
+.header__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__login-btn {
+  background-color: var(--bold-color);
+  height: 46px;
+  width: 105px;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 46px;
+}
+
+.login-icon {
+  margin-left: 4px;
+}
+
+.login-text {
+  margin-right: 4px;
+}
+
+.login-wrap {
+  position: absolute;
+  width: 318px;
+  height: 144px;
+  background-color: #fff;
+  top: 56px;
+  transform: translateX(25%);
+  right: 0;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.header__login:hover .login-wrap {
+  display: block;
+}
+
+.login-wrap::before {
+  content: "";
+  border-width: 20px 26px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  right: 100px;
+  top: -28px;
+}
+
+.login-wrap::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 90px;
+  right: 0;
+  top: -16px;
+  height: 20px;
+}
+
+.login-wrap__head {
+  color: #111;
+  background-color: #fff;
+  height: 22px;
+  padding: 16px;
+  cursor:auto;
+}
+
+.login__head-title {
+  margin-left: 4px;
+}
+
+.login-wrap__content {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 16px 0;
+
+}
+
+.login__content-btn {
+  width: 138px;
+  height: 32px;
+  border-radius: 4px;
+  border-top: 2px solid #656565;
+  border-left: 2px solid #656565;
+  border-right: 2px solid #111;
+  border-bottom: 2px solid #111;
+  cursor: pointer;
+}
+
+.login-sign-in {
+  color: #fff;
+  background-color: #111;
+}
+
+.login-sign-up {
+  color: #111;
+  background-color: #fff;
+}
+
+.login-wrap__footer {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ececec;
+  margin: 0 16px 16px;
+}
+
+.login__footer-icon {
+  font-size: 18px;
+}
+
+.login__footer-help {
+  text-decoration: none;
+  color: #111;
+  margin-left: 8px;
+}
+
+.login__footer-help:hover {
+  text-decoration: underline;
+}
+.grid {
+  width: 100%;
+  display: block;
+  padding: 0;
+}
+
+.grid.wide {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hidden{
+  display: none;
+}
+
+/* Modal */
+
+.modal {
+  margin: auto;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  justify-content: center;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-container-login {
+  background-color: #fff;
+  padding: 24px 0;
+  width: 500px;
+  height: 500px;
+  border-radius: 16px;
+  position: relative;
+  margin: auto;
+}
+.modal-container-register {
+  background-color: #fff;
+  padding: 24px 0;
+  width: 500px;
+  height: 550px;
+  border-radius: 16px;
+  position: relative;
+  margin: auto;
+}
+.modal-container-logout {
+  background-color: #fff;
+  padding: 24px 0;
+  width: 400px;
+  height: 200px;
+  border-radius: 16px;
+  position: relative;
+  margin: auto;
+}
+
+.modal__head {
+  height: 46px;
+  border-bottom: 1px solid #cfcfcf;
+}
+.modal__head-logout{
+  margin-left: 100px;
+}
+.modal__head-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px;
+  align-items: center;
+  height: 30px;
+}
+
+.modal__head-name {
+  color: #333;
+}
+
+.modal-close {
+  width: 20px;
+  height: 20px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.modal__content {
+  padding: 24px;
+}
+
+.modal-form__input {
+  width: 452px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #cfcfcf;
+  margin-bottom: 16px;
+  padding: 0 16px;
+  outline: none;
+}
+
+.modal-form__forget {
+  text-decoration: none;
+  color: #535353;
+  font-style: italic;
+  text-align: right;
+  display: block;
+}
+
+.modal-form__btn {
+  width: 452px;
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: 700;
+  margin-top: 32px;
+}
+
+.line {
+  text-align: center;
+  margin: 24px 0;
+  position: relative;
+}
+
+.line-title {
+  display: inline-block;
+  padding: 0 8px;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+  color: #535353;
+}
+
+.line::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background: #cfcfcf;
+  margin: auto;
+}
+
+.modal-more__login {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__login-social {
+  width: 222px;
+  height: 42px;
+  border-radius: 4px;
+  border: none;
+}
+
+.modal__logout-social {
+  width: 195px;
+  height: 42px;
+  border-radius: 4px;
+  border: none;
+}
+.modal__login-icon {
+  color: #fff;
+  font-size: 18px;
+}
+
+.modal__login-name {
+  color: #fff;
+  margin-left: 4px;
+  margin-bottom: 10px;
+}
+
+.modal__login-google {
+  background-color: #df4a32;
+}
+
+.modal__login-facebook {
+  background-color: #3b5998;
+}
+
+.modal__footer {
+  margin-top: 24px;
+}
+
+.modal__footer-link {
+  width: 100%;
+  text-align: center;
+}
+
+.modal__footer-title {
+  color: #535353;
+}
+
+.modal__footer-next-page {
+  text-decoration: none;
+  color: #1982f9;
+
+}
+
+.modal-form__checked {
+  height: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.modal-form__checkbox {
+  height: 16px;
+  width: 16px;
+  border: 1px solid #cfcfcf;
+  cursor: pointer;
+}
+
+.modal-form__checkbox {
+  accent-color: var(--primary-color);
+}
+
+.modal-form__input-title {
+  margin-left: 10px;
+}
+
+.modal-login {
+  display: none;
+}
+
+.modal-register {
+  display: none;
+}
+
+.modal-logout{
+  display: none;
+}
+.modal-logout.active~.modal-logout{
+  display: flex;
+}
+
+.modal-login.open {
+  display: flex;
+}
+
+.modal-register.open {
+  display: flex;
+}
+.modal-logout.open {
+  display: flex;
+}
+
+.header__logout {
+  display: flex;
+  flex-direction: column; /* Thêm thuộc tính này để sắp xếp theo hàng dọc */
+  align-items: flex-end; /* Điều chỉnh căn chỉnh theo chiều ngang */
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+.header__logout.remove {
+  display: none;
+}
+.header__logout.hidden {
+  display: none;
+  flex-direction: column; /* Thêm thuộc tính này để sắp xếp theo hàng dọc */
+  align-items: flex-end; /* Điều chỉnh căn chỉnh theo chiều ngang */
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+.header__logout-btn {
+  background-color: var(--bold-color);
+  height: 46px;
+  width: 160px;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 8px; /* Thêm khoảng cách giữa các phần tử */
+  line-height: 46px;
+}
+
+.logout-icon {
+  margin-left: 4px;
+}
+
+.logout-text {
+  margin-right: 4px;
+}
+
+.logout-wrap {
+  position: absolute;
+  width: 230px;
+  height: 110px;
+  background-color: #fff;
+  top: 58px;
+  transform: translateX(10%);
+  right: 0;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.header__logout:hover .logout-wrap {
+  display: block;
+}
+
+.logout-wrap::before {
+  content: "";
+  border-width: 20px 26px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  right: 80px;
+  top: -28px;
+}
+
+.logout-wrap::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 90px;
+  right: 0;
+  top: -16px;
+  height: 20px;
+}
+
+.logout-wrap__head {
+  color: #111;
+  background-color: #fff;
+  height: 22px;
+  padding: 16px;
+  cursor: auto;
+}
+
+.logout__head-title {
+  margin-left: 4px;
+  margin-bottom: 5px;
+}
+
+.logout-wrap__content {
+  display: flex;
+  flex-direction: column; /* Thêm thuộc tính này để sắp xếp theo hàng dọc */
+  padding: 16px;
+}
+
+.logout__content-link {
+  color: #111;
+  text-decoration: none;
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: 8px; /* Thêm khoảng cách giữa các phần tử */
+}
+
+.logout__content-link:hover {
+  text-decoration: underline;
+}
+
+.logout-wrap__footer {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ececec;
+  margin: 0 16px 16px;
+}
+
+.logout__footer-icon {
+  font-size: 18px;
+}
+
+.logout__footer-help {
+  text-decoration: none;
+  color: #111;
+  margin-left: 8px;
+}
+
+.logout__footer-help:hover {
+  text-decoration: underline;
+}
+
+.cart-icon {
+  width: 16px; /* Đặt chiều rộng mong muốn */
+  height: 20px; /* Đặt chiều cao mong muốn */
+  margin-right: 8px; /* Đặt khoảng cách với dòng "Giỏ hàng của tôi" */
+}
+
+.logout-icon {
+  width: 18px; /* Đặt chiều rộng mong muốn */
+  height: 22px; /* Đặt chiều cao mong muốn */
+  margin-right: 8px; /* Đặt khoảng cách với dòng "Đăng xuất" */
+  margin-top: -2px;
+}
+

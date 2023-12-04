@@ -9,7 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet(name = "AdminAddProductControl", urlPatterns = {"/addproducts"})
+@WebServlet(name = "AdminAddProductControl", urlPatterns = {"/adminAddProducts"})
 
 public class AdminAddProductControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
