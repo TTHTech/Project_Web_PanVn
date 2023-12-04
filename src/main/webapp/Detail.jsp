@@ -135,7 +135,6 @@
                         Thêm vào giỏ hàng <i class = "fas fa-shopping-cart"></i>
                     </button>
                 </form>
-                <button type = "button" class = "btn">Mua ngay</button>
             </div>
         </div>
     </div>

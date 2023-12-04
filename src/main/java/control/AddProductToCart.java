@@ -1,5 +1,6 @@
 package control;
 import entity.Item;
+import entity.Product;
 import  dao.itemDAO;
 
 import java.io.IOException;

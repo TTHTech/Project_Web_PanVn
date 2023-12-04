@@ -16,7 +16,7 @@
                         <div class="menu-bar-content">
                             <ul>
                                 <c:forEach var="o" items="${listB}">
-                                    <li><a href="brand?brandID=${o.brandID}"><i class="ti-github"></i>${o.brandName}<i class="ti-angle-double-right"></i></a></li>
+                                    <li><a href="brand?brandID=${o.brandID}"><i class="ti-github"></i>${o.brandName}<i class=""></i></a></li>
                                 </c:forEach>
                             </ul>
                         </div>
