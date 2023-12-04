@@ -1,14 +1,14 @@
 package entity;
 
 public class Product {
-    private int productID;
-    private String title;
+    public int productID;
+    public String title;
     private double price;
     private String description;
     private int brandID;
     private String color;
     private int productDetailID;
-    private String url1;
+    public String url1;
     private String url2;
     private String url3;
     private String url4;
